@@ -1,0 +1,35 @@
+.recommendedtaskbox-container > .box{
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    transition: var(--transition-cubicbezier);
+    margin-inline: auto;
+    left: 20rem;
+    background: var(--color-orange);
+}
+.recommendedtaskbox-container > .box > h2{
+    color: var(--color-darkish-blue);
+}
+.recommendedtaskbox-container > .box {
+    min-width: fit-content;
+    min-height: fit-content;
+}
+
+.recommendedtaskbox-container > .box > .btn{
+    position: relative;
+    max-width: 45px;
+    max-height: 45px;
+    margin: 1rem 0;
+}
+
+
+.recommendedtaskbox-container > .box > .btn:hover > img{
+    animation: repeat-rotate 1s ease-in-out infinite
+}
+
+@keyframes repeat-rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
+

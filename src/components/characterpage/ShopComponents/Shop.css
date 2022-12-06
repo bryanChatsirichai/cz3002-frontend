@@ -1,0 +1,19 @@
+.shop-container > .box{
+    background-color: var(--color-dark-purple);
+}
+.shop-container > .box > h2{
+    color: var(--color-darkish-yellow);
+}
+.shop-layout{
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    margin-top: 1rem;
+    place-items: center;
+    margin-left: 5%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overscroll-behavior: contain;
+    width: 90%;
+    height: 70%;
+}

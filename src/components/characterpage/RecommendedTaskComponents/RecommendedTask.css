@@ -1,0 +1,6 @@
+.recommended-task{
+    min-width: 200px;
+}
+.recommended-task > h5{
+    text-shadow: none;
+}

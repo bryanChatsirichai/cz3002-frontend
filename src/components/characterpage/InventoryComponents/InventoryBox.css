@@ -1,0 +1,12 @@
+.inventorybox-container > .box{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    min-width: 60vw;
+    min-height: 70vh;
+}
+
+.inventorybox-container >.box >div{
+    margin-bottom: 1rem;
+}

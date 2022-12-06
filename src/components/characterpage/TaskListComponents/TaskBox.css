@@ -1,0 +1,24 @@
+
+.taskbox-container > .box{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    row-gap: 1vh;
+
+    min-width: 60vw;
+    min-height: 60vh;
+}
+
+.taskbox-btns{
+    position: inherit;
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+    right: 1.5vw;
+    top: 2vh;
+}
+
+.taskbox-btns >.btn > h5{
+    font-size: 1.5vw;
+    padding: 0.25vw;
+}

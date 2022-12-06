@@ -1,0 +1,168 @@
+.shoppage_container>.background {
+    background-color: var(--color-bg);
+    background-image: url(../../assets/characterpage_scene.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    border-radius: 30px;
+    display: grid;
+    grid-template-areas:
+        "gold-profile . shopkeeper-img"
+        ". middle ."
+        ". bottom .";
+    margin: 1rem;
+    padding: 1rem;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+.items{
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 80vw;
+    position: absolute;
+    justify-content: start;
+    bottom: 15vh;
+    left: 10vw;
+    animation: shop-item-intro 1.5s forwards;
+}
+
+@keyframes shop-item-intro{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.shoppage_container>.background > .return-home-btn{
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    width: fit-content;
+    font-size: 2vw;
+}
+.shoppage_container >.background > .return-home-btn > h5{
+    margin: .25rem;
+}
+
+/*================= CHARACTER PROFILE ========================*/
+.shoppage_container>.background>.character_gold_profile {
+    grid-area: 'char-profile';
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-orange);
+    border-radius: 10px;
+    border: 8px solid var(--color-yellow-orange);
+    border-style: ridge;
+    min-width: 10vw;
+    max-width: 40vw;
+    width: fit-content;
+    overflow-x: scroll;
+    height: fit-content;
+    padding: 0.5rem;
+    filter: drop-shadow(5px 5px 10px #000);
+
+    animation: char-profile-intro;
+    animation-duration: 1.5s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-iteration-count: 1;
+}
+.character_gold_profile > h1{
+    font-size: 2vw;
+}
+.character_gold_profile > h2{
+    font-weight: 300;
+    font-size: 5vw;
+}
+@keyframes char-profile-intro {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.shop-title{
+    left: 30%;
+    top: 50%;
+    transform: translate(-30%,0);
+}
+
+.shop-title > .box{
+    height: 15vh;
+    width: fit-content;
+    background-color: #241e2c;
+    border: 5px solid #241e2c;
+    border-style: inset;
+    opacity: 0;
+
+    animation: shop-title-intro 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.shop-title > .box > span{
+    padding: 0.7vw;
+    font-size: 5vw;
+    font-family: var(--alt-font);
+    font-weight: 500;
+    text-shadow: 2px 2px var(--color-btn-bg);
+    animation: shop-title-text-anim, shop-title-text-color-anim;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 2.5s;
+}
+
+.shop-title > .box > .word-1{
+    /* --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;     */
+    --color-1: var(--color-light-purple);
+    --color-2: var(--color-darkish-yellow);
+    --color-3: var(--color-light-blue);    
+}
+.shop-title > .box > .word-2{
+    /* --color-1: #DBAD4A;
+    --color-2: #ACCFCB;
+    --color-3: #17494D; */
+    --color-1: var(--color-yellow-orange);
+    --color-2: var(--color-pink);
+    --color-3: var(--color-light-yellow);    
+}
+
+@keyframes shop-title-intro{
+    from{
+        opacity: 0;
+        filter: blur(5px);
+        height: 0;
+
+    }
+    to{
+        opacity: 1;
+        height: 15vh;
+    }
+}
+
+@keyframes shop-title-text-anim{
+    50%{
+        transform: translateY(-3px) scale(1.05);
+    }
+}
+
+@keyframes shop-title-text-color-anim{
+    0%    {color: var(--color-1); filter: drop-shadow(0px 0px 5px var(--color-1));}
+    32%   {color: var(--color-1);filter: drop-shadow(0px 0px 5px var(--color-1));}
+    33%   {color: var(--color-2);filter: drop-shadow(0px 0px 5px var(--color-2));}
+    65%   {color: var(--color-2);filter: drop-shadow(0px 0px 5px var(--color-2));}
+    66%   {color: var(--color-3);filter: drop-shadow(0px 0px 5px var(--color-3));}
+    99%   {color: var(--color-3);filter: drop-shadow(0px 0px 5px var(--color-3));}
+    100%  {color: var(--color-1);filter: drop-shadow(0px 0px 5px var(--color-1));}
+}
+
+

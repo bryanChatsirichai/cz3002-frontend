@@ -1,0 +1,10 @@
+.friend-layout{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    place-content: start;
+    margin-left: 2rem;
+    margin: 1rem;
+    align-items: center;
+}

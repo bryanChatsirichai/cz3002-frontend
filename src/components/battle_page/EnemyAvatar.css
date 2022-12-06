@@ -1,0 +1,113 @@
+.enemy{
+    transition: var(--transition-bars);
+    animation: enemy_enter 1s ease-in-out;
+}
+.damageText{
+    animation: damageText-anim 1s forwards infinite;
+    animation-play-state: paused;
+}
+.damageText > h5{
+    position: absolute;
+    font-size: 5vw;
+    filter: drop-shadow(0px 0px 5px var(--color-reddish));
+}
+@keyframes damageText-anim{
+    from{
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to{
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+@keyframes enemy_enter{
+    from{
+        transform: translateX(500%) scaleX(-1);
+    }
+    to{
+        transform: translateX(0) scaleX(-1);
+    }
+}
+#tree_man{
+    width: 10vw;
+    filter: drop-shadow(0px 0px 5px #38E54D);
+}
+#tree_man > img{
+    min-width: 20vw;
+    padding-top: 10vh;
+    animation: sprite-animation 1.5s steps(2) infinite;
+}
+
+#lesser_devil{
+    width: 6vw;
+}
+#lesser_devil > img{
+    min-width: 30vw;
+    margin-top: 15vh;
+    animation: sprite-animation 0.8s steps(4) infinite;
+}
+
+#dark_mage{
+    width: 6vw;
+    filter:drop-shadow(0px 0px 10px var(--color-light-purple)) contrast(150%);
+    animation: dark_mage_anim 2s forwards infinite;
+}
+@keyframes dark_mage_anim{
+    50%{
+        filter: drop-shadow(0px -10px 30px var(--color-light-purple)) contrast(150%);
+    }
+}
+#dark_mage > img{
+    min-width: 25vw;
+    padding-top: 20vh;
+    animation: sprite-animation 0.8s steps(4) infinite;
+}
+
+#green_slime{
+    width: 7.5vw;
+}
+#green_slime > img{
+    min-width: 28vw;
+    padding-top: 18vh;
+    animation: sprite-animation 0.8s steps(4) infinite;
+}
+
+#terror_monster{
+    width:15vw;
+    filter: drop-shadow(0px 0px 5px var(--color-reddish))  contrast(150%);
+
+    animation: terror_monster_anim 2s forwards infinite;
+}
+@keyframes terror_monster_anim{
+    50%{
+        filter: drop-shadow(0px 0px 30px var(--color-reddish)) contrast(150%);
+    }
+}
+#terror_monster > img{
+    min-width: 55vw;
+    animation: sprite-animation 0.8s steps(4) infinite;
+}
+
+.enemyavatar-container > .enemy > img:is(.damaged){
+    filter: invert(100%) blur(1px);
+}
+.enemyavatar-container > .vfx{
+    position: absolute;
+    top: 25vh;
+    right: 7vw;
+    height: fit-content;
+    width: 6vw;
+    overflow: hidden;
+    transform: rotate(-20deg);
+}
+.enemyavatar-container > .vfx >img{
+    filter: contrast(200%) drop-shadow(0px 0px 5px red);
+    min-width: 600px;
+    animation: sprite-animation .8s steps(6) reverse;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    opacity: 0;
+}
+.enemyavatar-container > .vfx >img:is(.damaged){
+    opacity: 1;
+    animation-play-state: running;
+}

@@ -1,0 +1,23 @@
+.char_item-container{
+    width: 100px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    row-gap: .5rem;
+}
+.char_item-container > .item-body{
+    background: gray;
+    border-radius: 5px;
+    width: 100%;
+}
+.char_item-container > .item-body:is(.bought){
+    background: transparent;
+    border: 8px var(--color-btn-bg);
+    border-style: inset;
+}
+
+.char_item-container > h4{
+    color: var(--color-darkish-blue);
+    word-wrap: break-word;
+}

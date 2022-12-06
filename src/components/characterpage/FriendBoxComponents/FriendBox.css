@@ -1,0 +1,37 @@
+.friendbox-container > .box{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background: var(--color-orange);
+    min-width: fit-content;
+    min-height: 250px;
+    max-width: 15vw;
+    right: 5vw;
+    top: 20vh;
+    margin-inline: auto;
+
+    animation: friendbox-intro 1s forwards;
+}
+
+.friendbox-container >.box >div{
+    margin-bottom: 1rem;
+}
+
+.friendbox-container >.box >.clearClaimedGifts{
+    position: inherit;
+    right: 1rem;
+    top: 1rem;
+    height: 35px;
+}
+
+@keyframes friendbox-intro{
+    from{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(100%);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

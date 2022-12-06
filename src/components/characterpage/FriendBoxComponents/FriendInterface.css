@@ -1,0 +1,25 @@
+.friendinterface-container{
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5rem;
+    width: fit-content;
+    margin-top: 1rem;
+
+    animation: interface-intro 2s forwards;
+}
+.friendinterface-container > form > input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+@keyframes interface-intro{
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}

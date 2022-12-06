@@ -1,0 +1,41 @@
+.victorybox-container > .box{
+    height: fit-content;
+    width: fit-content;
+    background: var(--color-reddish);
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: fit-content;
+}
+.victorybox-container > .box > h2{
+    font-family: var(--alt-font);
+    color: var(--color-white);
+    text-decoration: underline;
+    filter: drop-shadow(6px 6px 3px #000);
+    font-size: 4vw;
+}
+.victorybox-container > .box > .fields {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    font-size: 2vw;
+}
+.victorybox-container > .box > .fields > div{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+}
+.victorybox-container > .box > .fields > div > .outer-field{
+    filter: drop-shadow(4px 4px 2px #000);
+    text-align: center;
+    font-family: var(--alt-font);
+}
+.victorybox-container > .box > *{
+    margin: 3vh 2vw;
+}
+.victorybox-container > .box > a >h5{
+    font-size: 2vw;
+}

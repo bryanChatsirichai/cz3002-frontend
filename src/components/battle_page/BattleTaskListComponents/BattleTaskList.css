@@ -1,0 +1,11 @@
+.battletasklist-container{
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    scroll-behavior: smooth;
+    height: 80%;
+    width: 85vw;
+}
+.battletasklist-container::-webkit-scrollbar{
+    display: none;
+}

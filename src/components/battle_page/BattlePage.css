@@ -1,0 +1,40 @@
+.battlepage-container > .battlepage-screen{
+    background-color: #2F283A;
+    background-image: url(../../assets/battle_background.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.battlepage-screen > .return-home-btn{
+    position: absolute;
+    right: 3vw;
+    top: 5vh;
+    width: fit-content;
+    font-size: 2vw;
+    padding: 0.3vw;
+}
+
+/* BATTLE SCENE */
+.battlepage-screen > .entity-space{
+    display: flex;
+    flex-direction: row;
+    column-gap: 40vw;
+    margin: auto auto;
+    height: fit-content;
+    overflow: hidden;
+    min-height: 50vh;
+    overflow: visible;
+}
+
+.battlepage-screen > .entity-space > div {
+    position: relative;
+    top: 14vh;
+}

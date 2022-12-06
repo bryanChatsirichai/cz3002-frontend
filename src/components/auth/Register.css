@@ -1,0 +1,46 @@
+.register-background{
+    background: url(../../assets/login_page_background.png);
+    min-height: 100vh;
+    min-width: fit-content;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+.register-background > .box{
+    position: relative;
+    margin-inline: auto;
+    left: 0;
+    top: 20%;
+    background: var(--color-orange);
+    overflow: visible;
+    min-width: 400px;
+    min-height: 400px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.register-background > .box::after{
+    content: "";
+    min-height: 5vh;
+    min-width: 5vh;
+    background: var(--color-orange);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: -1;
+}
+.register-background > .box > h3{
+    font-size: 2rem;
+    color:var(--color-darkish-blue);
+    font-family: var(--alt-font);
+    text-shadow: 2px 2px rgba(0,0,0,0.3);
+}
+.register-form{
+    margin-inline: auto;  
+}
+

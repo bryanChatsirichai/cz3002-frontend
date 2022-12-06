@@ -1,0 +1,327 @@
+.characterpage_container>.background {
+    background-color: #2F283A;
+    background-image: url(../../assets/characterpage_scene.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "char-profile . top-btn"
+        ". middle ."
+        ". bottom .";
+    margin: 1rem;
+    padding: 1rem;
+    overflow: hidden;
+    min-height: fit-content;
+    height: 100vh;
+}
+
+/*================= CHARACTER PROFILE ========================*/
+.characterpage_container>.background>.character_profile {
+    grid-area: 'char-profile';
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 1rem;
+    background-color: var(--color-reddish);
+    border-radius: 10px;
+    border: 8px solid var(--color-reddish);
+    border-style: ridge;
+    max-width: fit-content;
+    min-width: 30vw;
+    min-height: 100px;
+    max-height: 20vh;
+    padding: 0.5rem;
+    top: 1rem;
+    filter: drop-shadow(5px 5px 10px #000);
+
+    animation: char-profile-intro;
+    animation-duration: 1.5s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-iteration-count: 1;
+}
+.character_profile>.profile-picture > .profile-pic-border{
+    border-radius: 50%;
+    border: 0.35vw solid var(--color-darkish-blue);
+    max-width: 8vw;
+    max-height: 15vh;
+    overflow: hidden;
+    background: var(--color-light);
+    transform: translateX(-100%);
+
+    animation: profile-pic-intro;
+    animation-duration: 1.5s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+.profile-pic-border>img {
+    margin:0 auto;
+    width: 4vw;
+}
+
+.profile-picture>.line {
+    position: relative;
+    top: -9vh;
+    left: 7.65vw;
+    content: "";
+    min-height: 0.5vh;
+    background: var(--color-darkish-blue);
+    opacity: 0;
+
+    animation: profile-pic-line-intro;
+    animation-duration: 1.5s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes char-profile-intro {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes profile-pic-intro {
+    from {
+        filter: blur(10px);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    to {
+        filter: blur(0px);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes profile-pic-line-intro {
+    from {
+        opacity: 0;
+        width: 0%;
+    }
+
+    to {
+        opacity: 1;
+        width: 220%;
+    }
+}
+.char-details{
+    margin-top: 1vh;
+}
+/*================= TOP RIGHT BUTTONS ========================*/
+.characterpage_container>.background>.btn_group {
+    grid-area: 'top-btn';
+    position: relative;
+    margin-top: 1rem;
+    right: 13vw;
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+    width: fit-content;
+    height: fit-content;
+
+    animation: topright-btn-intro;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+.characterpage_container>.background>.btn_group >.btn {
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+}
+.characterpage_container>.background>.btn_group >.btn:not(.no-hover):hover{
+    transform: scale(1.1) rotate(-5deg) translateX(-5px);
+} 
+
+
+.characterpage_container>.background>.btn_group>.btn>img {
+    min-height: 6vh;
+    min-width: 4vw;
+    max-width: 55px;
+    max-height: 55px;
+}
+
+@keyframes topright-btn-intro {
+    0% {
+        filter: blur(10px);
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*================= MIDDLE CHARACTER ========================*/
+.characterpage_container>.background>.avatar-scene {
+    grid-area: 'middle';
+}
+
+.characterpage_container>.background>.avatar-scene>.character-avatar {
+    position: absolute;
+    margin-left: 3rem;
+    top: 40vh;
+    left: 45vw;
+
+    animation: player_jump 7s forwards infinite;
+    animation-delay: 7s;
+}
+@keyframes player_jump{
+    0%,4%,8%,100%{
+        transform: translateY(0px);
+    }
+    2%,6%{
+        transform: translateY(-10vh); 
+    }
+}
+/*================= BOTTOM BUTTON GROUP ========================*/
+.characterpage_container>.background>.bottom_btn {
+    grid-area: 'bottom';
+    display: flex;
+    flex-direction: row;
+    margin-top: 62vh;
+    column-gap: 37vw;
+    transition: var(--transition-cubicbezier);
+    justify-content: space-evenly;
+    align-items: center;
+
+    animation: bottom-btn-intro;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+
+.characterpage_container>.background>.bottom_btn>.battle-btn {
+    display: flex;
+    min-height: 15vh;
+    min-width: 8vw;
+    border-radius: 50%;
+    border: 5px #F4A716;
+    border-style: outset;
+    background: radial-gradient(#F4A716 55%, #FCEFD3);
+}
+
+.characterpage_container>.background>.bottom_btn>.battle-btn.btn:not(.no-hover):hover {
+    box-shadow: 0px 0px 8px 5px var(--color-darkish-yellow);
+    color: var(--color-darkish-yellow);
+    transform: translateY(-15px) scale(1.1);
+
+    animation: battle-btn-hover-effect;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-duration: 3.5s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes battle-btn-hover-effect {
+    0%,100% {
+        transform: translateY(-15px) scale(1.1);
+        box-shadow: 0px 0px 8px 5px var(--color-darkish-yellow);
+    }
+
+    50% {
+        transform: translateY(-15px) scale(1.2);
+        box-shadow: 0px 0px 15px 8px var(--color-darkish-yellow);
+        filter: contrast(150%);
+    }
+}
+
+.characterpage_container>.background>.bottom_btn>.inventory-btn {
+    background: transparent;
+    border: 0px;
+    box-shadow: none;
+}
+
+.characterpage_container>.background>.bottom_btn>.inventory-btn:hover {
+    background: none;
+    box-shadow: none;
+    transform: scale(1.2);
+
+    animation: inventory_animations 1.5s forwards infinite;
+    animation-delay: 0.5s;
+}
+@keyframes inventory_animations{
+    0%, 10%, 30%, 40%{
+        transform: rotate(0deg) scale(1.2);
+    }
+    5%, 25%{
+        transform: rotate(2deg) scale(1.2);
+    }
+    15%, 35%{
+        transform: rotate(-2deg) scale(1.2);
+    }
+    100%{
+        transform: rotate(0deg) scale(1.2);
+    }
+}
+.characterpage_container>.background>.bottom_btn>.sidebar-container>.sidebar-btn {
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+}
+
+.sidebar-btn>.inner-btns {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sidebar-btn>.inner-btns>.btn {
+    border: 0px;
+    box-shadow: none;
+    background-color: transparent;
+    width: 45px;
+    height: 45px;
+}
+
+.sidebar-btn>.inner-btns>.btn:hover {
+    background-color: transparent;
+    box-shadow: none;
+    transform: scale(1.2);
+}
+
+.characterpage_container>.background>.bottom_btn>.sidebar-container>.sidebar-btn {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    bottom: -45vh;
+    min-height: 53vh;
+    max-width: fit-content;
+    place-items: start;
+}
+
+.characterpage_container>.background>.bottom_btn>.sidebar-container>.sidebar-btn>img {
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes bottom-btn-intro {
+    0% {
+        filter: blur(10px);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0px);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

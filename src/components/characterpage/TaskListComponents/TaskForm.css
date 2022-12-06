@@ -1,0 +1,41 @@
+.taskform-container{
+    display: flex;
+    flex-direction: column;
+}
+.taskform-format{
+    display: flex;
+    flex-direction: row;
+    column-gap: 1vw;
+    align-items: baseline;
+}
+.taskform-format > input{
+    width: 35vw;
+    height: 5vh;
+    border: 1px solid var(--color-btn-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    font-family: var(--main-font);
+
+    animation: input-intro 0.8s ease-in-out;
+}
+.taskform-format > .btn{
+    height: 6.5vh;
+    width: 3.5vw ;
+    font-size: 2vw;
+    font-weight: 100;
+}
+.taskform-format > .btn > h5{
+    color: var(--color-white);
+}
+.taskform-format > .taskpriority-select{
+    animation: select-intro 1s ease-in-out;
+}
+@keyframes input-intro{
+    from{
+        opacity: 0;
+        width: 0;
+    }
+    to{
+        width: 35vw;
+    }
+}

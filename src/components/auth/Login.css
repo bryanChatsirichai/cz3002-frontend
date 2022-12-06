@@ -1,0 +1,104 @@
+.login-background {
+    background-image: url(../../assets/login_page_background.png);
+    min-height: 100vh;
+    min-width: fit-content;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+}
+
+.login-background>.box {
+    position: relative;
+    margin-inline: auto;
+    left: 0;
+    top: 0vh;
+    background: var(--color-orange);
+    width: fit-content;
+    overflow: visible;
+    min-width: 45vw;
+    height: auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    padding: 1rem;
+}
+
+.login-background>.box::after {
+    content: "";
+    min-height: 5vh;
+    min-width: 5vh;
+    background: var(--color-orange);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: -1;
+}
+
+/* .login-background>.box>.login-title> h3 {
+    color: var(--color-light-yellow);
+    font-family: var(--alt-font);
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    font-size: 5vw;
+    animation: growing 1s forwards infinite;
+} */
+
+.login-title {
+    position: relative;
+  }
+
+  .login-title span {
+    position: relative;
+    display: inline-block;
+    font-size: 4vw;
+    margin: 0.1vw;
+    color: var(--color-light-yellow);
+    text-shadow: 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: var(--main-font);
+    font-weight: 700;
+    animation: flip, change-color;
+    animation-duration: 8s, 1s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-iteration-count: infinite;
+    animation-delay: calc(.2s * var(--i)), 0s;
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes change-color{
+    50%{
+        filter: hue-rotate(360deg);
+        scale: 1.05;
+        text-shadow: 4px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+
+.login-form>.auth-btn-group {
+    margin-top: 3vh;
+    margin-bottom: 2vh;
+}
+
+.authform input {
+    padding: 0.75vh;
+    border-radius: 0.75vh;
+    width: 20vw;
+    font-family: var(--font-main);
+    animation: i-anim 1s ease-in-out;
+}
+
+@keyframes i-anim {
+    from {
+        width: 0;
+        filter: blur(5px);
+        opacity: 0;
+    }
+
+    to {
+        width: 20vw;
+    }
+}

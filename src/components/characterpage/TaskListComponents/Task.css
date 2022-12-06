@@ -1,0 +1,47 @@
+.task-container{
+    display: inline-flex;
+    flex-direction: row;
+    background-color: var(--color-light-blue);
+    margin: 1rem;
+    padding: .75rem;
+    resize: fit-content;
+    place-content: center;
+    justify-content: space-between;
+    border: 1px transparent;
+    border-radius: 5px;
+    word-wrap: break-word;
+    min-width: 10vw;
+    max-width: 30vw;
+    transition: var(--transition-cubicbezier);
+}
+
+.task-container > input{
+    width: 1.5rem;
+    transition: var(--transition-cubicbezier);
+}
+.task-container > input:hover{
+    transform: scale(1.2);
+    color: var(--color-darkish-blue);
+}
+
+.task-container > input:hover > h5{
+    color: var(--color-darkish-blue);
+}
+
+.task-container > h5{
+    font-size: 1vw;
+    color: var(--color-darkish-blue);
+    margin: 0rem 1rem;
+    text-align: center;
+    max-width: 20vw;
+    text-shadow: none;
+}
+
+.task-container > .btn{
+    width: 3vw;
+    height: 6vh;
+    text-align: center;
+}
+.task-container > .btn:hover > img{
+    color: var(--color-darkish-blue);
+}

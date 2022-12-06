@@ -1,0 +1,32 @@
+.battletaskbox-container > .box{
+    height: 20vh;
+    min-width: 90vw;
+    min-height: 5vh;
+    left: 2vw;
+    background: #5f6f944a;
+    backdrop-filter: blur(5px);
+    border: 5px solid var(--color-reddish);
+    border-style: ridge;
+    position: relative;
+    top: 0;
+    place-content: center;
+
+    animation: battletaskbox-intro;
+    animation-duration: 1s;
+    animation-timing-function: var(--transition-cubicbezier);
+    animation-iteration-count: 1;
+}
+
+@keyframes battletaskbox-intro{
+    from{
+        filter: blur(10px);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to{
+        filter: blur(0px);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

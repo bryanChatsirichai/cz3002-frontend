@@ -1,0 +1,13 @@
+.inventory-layout{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    min-width: 55vw;
+    max-height: 80%;
+    place-content: start;
+    padding: 1rem;
+    border: 0.5vw var(--color-darker-yellow);
+    border-style: inset;
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 15px 10px rgba(0,0,0,0.3),
+                0px 0px 5px 5px rgba(255,255,255,0.5);
+}

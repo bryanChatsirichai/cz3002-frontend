@@ -1,0 +1,10 @@
+.shopitem{
+    background: var(--color-light-blue);
+    height: 150px;
+    width: 90%;
+    text-align: start;
+    border-radius: 10px;
+}
+.shopitem > .itemname{
+    margin: 1rem;
+}
